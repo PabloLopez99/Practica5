@@ -16,7 +16,9 @@ import java.awt.image.BufferedImage;
 public class ImageHandler {
     private static BufferedImage backup;
     public static void setImage(){
-        Lienzo.setUrl("https://www.todopaisajes.com/1024x768/la-torre-eiffel-de-paris.jpg");
+       // Lienzo.setUrl("https://www.todopaisajes.com/1024x768/la-torre-eiffel-de-paris.jpg");
+        //Lienzo.setUrl("https://ociohotelesonline.com/wp-content/uploads/2020/02/Qu%C3%A9-ver-en-Ja%C3%A9n-en-un-d%C3%ADa-de-turismo-1024x538.jpg");
+        Lienzo.setUrl("https://i.ytimg.com/vi/sr_vL2anfXA/maxresdefault.jpg");
     }
     public static void applyFilter(String filter){
         BufferedImage imagen = Lienzo.getImage();
