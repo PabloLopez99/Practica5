@@ -16,9 +16,26 @@ import java.awt.image.BufferedImage;
 public class ImageHandler {
     private static BufferedImage backup;
     public static void setImage(){
-       // Lienzo.setUrl("https://www.todopaisajes.com/1024x768/la-torre-eiffel-de-paris.jpg");
+        Lienzo.setUrl("https://www.todopaisajes.com/1024x768/la-torre-eiffel-de-paris.jpg");
         //Lienzo.setUrl("https://ociohotelesonline.com/wp-content/uploads/2020/02/Qu%C3%A9-ver-en-Ja%C3%A9n-en-un-d%C3%ADa-de-turismo-1024x538.jpg");
-        Lienzo.setUrl("https://i.ytimg.com/vi/sr_vL2anfXA/maxresdefault.jpg");
+       // Lienzo.setUrl("https://i.ytimg.com/vi/sr_vL2anfXA/maxresdefault.jpg");
+      //  Lienzo.setUrl("https://www.losviajesdegrimes.com/wp-content/uploads/2020/04/plaza-de-san-pedro.jpg");
+
+    }
+    public static void setLogo() {
+        Lienzo.setLogoUrl("https://www.logocrea.com/wp-content/uploads/2016/07/hoja2.png");
+    }
+    public static void setLogoPosition(String position){
+ 
+        if(position.equals("TOPLEFT")){
+            Lienzo.setLogoPosition(0, 0);
+        }else if(position.equals("TOPRIGHT")){
+             Lienzo.setLogoPosition(Lienzo.getImage().getWidth()-(Lienzo.getLogo().getWidth())/2, 0);
+        }else if(position.equals("BOTTOMLEFT")){
+             Lienzo.setLogoPosition(0, Lienzo.getImage().getHeight()-(Lienzo.getLogo().getHeight())/2);
+        }else if(position.equals("BOTTOMRIGHT")){
+             Lienzo.setLogoPosition(Lienzo.getImage().getWidth()-(Lienzo.getLogo().getWidth())/2, Lienzo.getImage().getHeight()-(Lienzo.getLogo().getHeight())/2);
+        }
     }
     public static void applyFilter(String filter){
         BufferedImage imagen = Lienzo.getImage();
@@ -91,4 +108,6 @@ public class ImageHandler {
     public static void reset(){
         Lienzo.resetImage();
     }
+
+    
 }

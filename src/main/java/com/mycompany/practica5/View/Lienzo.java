@@ -7,6 +7,8 @@ package com.mycompany.practica5.View;
 
 import java.awt.Color;
 import java.awt.Graphics;
+import java.awt.geom.AffineTransform;
+import java.awt.image.AffineTransformOp;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
 import java.net.MalformedURLException;
@@ -22,11 +24,15 @@ import javax.swing.JPanel;
  */
 public class Lienzo extends JPanel{
     private static BufferedImage imagen = null;
+    private static BufferedImage logo = null;
     private static String url="";
-    
+    private static String logoUrl="";
+    private static int xcoordinate;
+    private static int ycoordinate;
     public Lienzo(){
         if(imagen ==null){
             getImageFromUrl();
+            getLogoFromUrl();
         }else{
             
         }
@@ -46,10 +52,15 @@ public class Lienzo extends JPanel{
     public static void setUrl(String url) {
         Lienzo.url=url;
     }
+    public static void setLogoUrl(String url) {
+        Lienzo.logoUrl=url;
+    }
     @Override
     public void paintComponent(Graphics g){
         super.paintComponent(g);
         g.drawImage(imagen,0,0,null);
+        
+        g.drawImage(logo,xcoordinate,ycoordinate,null);
       
     }
     public static void changeImage(BufferedImage imagen){
@@ -60,6 +71,13 @@ public class Lienzo extends JPanel{
     }
     public static BufferedImage getImage(){
         return imagen;
+    }
+    public static BufferedImage getLogo(){
+        return logo;
+    }
+    public static void setLogoPosition(int x, int y){
+        xcoordinate=x;
+        ycoordinate=y;
     }
   
     public static BufferedImage getOriginalImage(){
@@ -73,4 +91,32 @@ public class Lienzo extends JPanel{
         }
          return aux;
     }
+
+    private void getLogoFromUrl() {
+        try{
+            logo = ImageIO.read(new URL(logoUrl));
+            int x=logo.getWidth();
+            int y= logo.getHeight();
+            BufferedImage rescale= new BufferedImage(x,y,BufferedImage.TYPE_INT_ARGB);
+            AffineTransform at=new AffineTransform();
+            at.scale(0.5, 0.5);
+            AffineTransformOp scaleOp = new AffineTransformOp(at, AffineTransformOp.TYPE_BILINEAR);
+            rescale = scaleOp.filter(logo, rescale);
+            logo=rescale;
+        }catch(MalformedURLException ex){
+            Logger.getLogger(Lienzo.class.getName()).log(Level.SEVERE, null, ex);
+        }catch(IOException ex){
+            Logger.getLogger(Lienzo.class.getName()).log(Level.SEVERE, null, ex);
+        }    }
 }
+/*
+BufferedImage before = getBufferedImage(encoded);
+int w = before.getWidth();
+int h = before.getHeight();
+BufferedImage after = new BufferedImage(w, h, BufferedImage.TYPE_INT_ARGB);
+AffineTransform at = new AffineTransform();
+at.scale(2.0, 2.0);
+AffineTransformOp scaleOp = 
+   new AffineTransformOp(at, AffineTransformOp.TYPE_BILINEAR);
+after = scaleOp.filter(before, after);
+*/

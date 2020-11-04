@@ -24,9 +24,13 @@ public class MainJFrame extends javax.swing.JFrame {
             
     public MainJFrame() {
         ImageHandler.setImage();
-     
+        ImageHandler.setLogo();
         initComponents();
-      
+        buttonGroup.add(arribaIzquierdaButton);
+        buttonGroup.add(arribaDerechaButton);
+        buttonGroup.add(abajoIzquierdaButton);
+        buttonGroup.add(abajoDerechaButton);
+
         this.setVisible(true);
         
     }
@@ -40,6 +44,7 @@ public class MainJFrame extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        buttonGroup = new javax.swing.ButtonGroup();
         lienzo2 = new com.mycompany.practica5.View.Lienzo();
         jPanel1 = new javax.swing.JPanel();
         redCheckBox = new javax.swing.JCheckBox();
@@ -48,6 +53,12 @@ public class MainJFrame extends javax.swing.JFrame {
         allCheckBox = new javax.swing.JCheckBox();
         titleLabel = new javax.swing.JLabel();
         authorsLabel = new javax.swing.JLabel();
+        jPanel2 = new javax.swing.JPanel();
+        abajoIzquierdaButton = new javax.swing.JRadioButton();
+        abajoDerechaButton = new javax.swing.JRadioButton();
+        arribaIzquierdaButton = new javax.swing.JRadioButton();
+        arribaDerechaButton = new javax.swing.JRadioButton();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -59,7 +70,7 @@ public class MainJFrame extends javax.swing.JFrame {
         );
         lienzo2Layout.setVerticalGroup(
             lienzo2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 187, Short.MAX_VALUE)
+            .addGap(0, 233, Short.MAX_VALUE)
         );
 
         redCheckBox.setSelected(true);
@@ -104,6 +115,73 @@ public class MainJFrame extends javax.swing.JFrame {
 
         authorsLabel.setText("Azael Santana Enríquez y Pablo López Martín");
 
+        abajoIzquierdaButton.setText("Abajo Izquierda");
+        abajoIzquierdaButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                abajoIzquierdaButtonActionPerformed(evt);
+            }
+        });
+
+        abajoDerechaButton.setText("Abajo Derecha");
+        abajoDerechaButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                abajoDerechaButtonActionPerformed(evt);
+            }
+        });
+
+        arribaIzquierdaButton.setText("Arriba Izquierda");
+        arribaIzquierdaButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                arribaIzquierdaButtonActionPerformed(evt);
+            }
+        });
+
+        arribaDerechaButton.setText("Arriba Derecha");
+        arribaDerechaButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                arribaDerechaButtonActionPerformed(evt);
+            }
+        });
+
+        jLabel1.setText("Posición del logo");
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(abajoIzquierdaButton))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(abajoDerechaButton)
+                            .addComponent(arribaDerechaButton)
+                            .addComponent(arribaIzquierdaButton)
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addGap(11, 11, 11)
+                                .addComponent(jLabel1)))
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addContainerGap())
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(12, 12, 12)
+                .addComponent(jLabel1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(arribaIzquierdaButton)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(arribaDerechaButton)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(abajoIzquierdaButton)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(abajoDerechaButton)
+                .addContainerGap(14, Short.MAX_VALUE))
+        );
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -123,35 +201,40 @@ public class MainJFrame extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(allCheckBox))))
                     .addComponent(authorsLabel))
-                .addContainerGap(171, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 90, Short.MAX_VALUE)
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(authorsLabel)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(38, 38, 38)
                 .addComponent(titleLabel)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 14, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(redCheckBox)
                     .addComponent(greenCheckBox)
                     .addComponent(blueCheckBox)
                     .addComponent(allCheckBox))
                 .addContainerGap())
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(48, 48, 48)
-                .addComponent(lienzo2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(51, 51, 51))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(173, 173, 173)
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(27, 27, 27))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(lienzo2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -233,6 +316,26 @@ public class MainJFrame extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_allCheckBoxItemStateChanged
 
+    private void arribaIzquierdaButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_arribaIzquierdaButtonActionPerformed
+        ImageHandler.setLogoPosition("TOPLEFT");
+        lienzo2.repaint();
+    }//GEN-LAST:event_arribaIzquierdaButtonActionPerformed
+
+    private void arribaDerechaButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_arribaDerechaButtonActionPerformed
+        ImageHandler.setLogoPosition("TOPRIGHT");
+        lienzo2.repaint();
+    }//GEN-LAST:event_arribaDerechaButtonActionPerformed
+
+    private void abajoIzquierdaButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_abajoIzquierdaButtonActionPerformed
+        ImageHandler.setLogoPosition("BOTTOMLEFT");
+        lienzo2.repaint();
+    }//GEN-LAST:event_abajoIzquierdaButtonActionPerformed
+
+    private void abajoDerechaButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_abajoDerechaButtonActionPerformed
+        ImageHandler.setLogoPosition("BOTTOMRIGHT");
+        lienzo2.repaint();
+    }//GEN-LAST:event_abajoDerechaButtonActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -268,11 +371,18 @@ public class MainJFrame extends javax.swing.JFrame {
         });
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JRadioButton abajoDerechaButton;
+    private javax.swing.JRadioButton abajoIzquierdaButton;
     private javax.swing.JCheckBox allCheckBox;
+    private javax.swing.JRadioButton arribaDerechaButton;
+    private javax.swing.JRadioButton arribaIzquierdaButton;
     private javax.swing.JLabel authorsLabel;
     private javax.swing.JCheckBox blueCheckBox;
+    private javax.swing.ButtonGroup buttonGroup;
     private javax.swing.JCheckBox greenCheckBox;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
     private com.mycompany.practica5.View.Lienzo lienzo2;
     private javax.swing.JCheckBox redCheckBox;
     private javax.swing.JLabel titleLabel;
