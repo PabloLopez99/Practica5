@@ -97,7 +97,7 @@
                       </Group>
                       <Component id="authorsLabel" alignment="0" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace pref="170" max="32767" attributes="0"/>
+                  <EmptySpace pref="185" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -249,7 +249,6 @@
         </Component>
         <Component class="javax.swing.JRadioButton" name="arribaIzquierdaButton">
           <Properties>
-            <Property name="selected" type="boolean" value="true"/>
             <Property name="text" type="java.lang.String" value="Arriba Izquierda"/>
           </Properties>
           <Events>
@@ -258,6 +257,7 @@
         </Component>
         <Component class="javax.swing.JRadioButton" name="arribaDerechaButton">
           <Properties>
+            <Property name="selected" type="boolean" value="true"/>
             <Property name="text" type="java.lang.String" value="Arriba Derecha"/>
           </Properties>
           <Events>

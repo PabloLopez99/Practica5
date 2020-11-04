@@ -27,16 +27,20 @@ public class MainJFrame extends javax.swing.JFrame {
     public MainJFrame() {
         ImageHandler.setImage();
         ImageHandler.setLogo();
+     
+        
         initComponents();
+        initializeButtonGroup();
+        ImageHandler.setLogoPosition("TOPRIGHT");
+        this.setSize(new Dimension(1030,1030));
+        this.setResizable(false);
+        this.setVisible(true);
+    }
+    private void initializeButtonGroup(){
         buttonGroup.add(arribaIzquierdaButton);
         buttonGroup.add(arribaDerechaButton);
         buttonGroup.add(abajoIzquierdaButton);
         buttonGroup.add(abajoDerechaButton);
-
-      
-        this.setSize(new Dimension(1030,1030));
-        this.setResizable(false);
-        this.setVisible(true);
     }
 
     /**
@@ -133,7 +137,7 @@ public class MainJFrame extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(allCheckBox))))
                     .addComponent(authorsLabel))
-                .addContainerGap(170, Short.MAX_VALUE))
+                .addContainerGap(185, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -167,7 +171,6 @@ public class MainJFrame extends javax.swing.JFrame {
             }
         });
 
-        arribaIzquierdaButton.setSelected(true);
         arribaIzquierdaButton.setText("Arriba Izquierda");
         arribaIzquierdaButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -175,6 +178,7 @@ public class MainJFrame extends javax.swing.JFrame {
             }
         });
 
+        arribaDerechaButton.setSelected(true);
         arribaDerechaButton.setText("Arriba Derecha");
         arribaDerechaButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
