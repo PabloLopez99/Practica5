@@ -35,6 +35,7 @@ public class MainJFrame extends javax.swing.JFrame {
 
       
         this.setSize(new Dimension(1030,1030));
+        this.setResizable(false);
         this.setVisible(true);
     }
 
@@ -73,7 +74,7 @@ public class MainJFrame extends javax.swing.JFrame {
         );
         lienzo2Layout.setVerticalGroup(
             lienzo2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 233, Short.MAX_VALUE)
+            .addGap(0, 231, Short.MAX_VALUE)
         );
 
         redCheckBox.setSelected(true);
@@ -132,7 +133,7 @@ public class MainJFrame extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(allCheckBox))))
                     .addComponent(authorsLabel))
-                .addContainerGap(156, Short.MAX_VALUE))
+                .addContainerGap(170, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -149,6 +150,8 @@ public class MainJFrame extends javax.swing.JFrame {
                     .addComponent(allCheckBox))
                 .addContainerGap())
         );
+
+        jPanel2.setBorder(javax.swing.BorderFactory.createCompoundBorder(null, new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true)));
 
         abajoIzquierdaButton.setText("Abajo Izquierda");
         abajoIzquierdaButton.addActionListener(new java.awt.event.ActionListener() {
@@ -227,7 +230,7 @@ public class MainJFrame extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(lienzo2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGap(0, 46, Short.MAX_VALUE)
+                        .addGap(0, 44, Short.MAX_VALUE)
                         .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
