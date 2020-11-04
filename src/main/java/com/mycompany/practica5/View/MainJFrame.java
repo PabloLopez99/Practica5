@@ -129,6 +129,7 @@ public class MainJFrame extends javax.swing.JFrame {
             }
         });
 
+        arribaIzquierdaButton.setSelected(true);
         arribaIzquierdaButton.setText("Arriba Izquierda");
         arribaIzquierdaButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
